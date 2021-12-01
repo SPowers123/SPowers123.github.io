@@ -60,127 +60,56 @@
     <div class="row">
         <div class="col-3 content-col rounded mt-2">
             <p class="lead">Content<br>
-                <a href="#encapsulation">Where to Find Encapsulation</a><br>
-                <a href="#inheritence">Inheritence and Where to Find it in a Calculator</a>
-                <a href="#polymorphism"></a>
-                <a href="#abstraction">The Calculator Program and Abstraction</a>
+                <a href="#solid">SOLID principles and calculators</a><br>
             </p>   
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="encasulation">How does the calculator Display Encapsulation</h1>
-            <p class="lead">  Encapsulation is the simple act of wrapping code and data into a single unit. This can be displayed in the Getsample file.
-            In this file, there is a method called getSample that collects the variables data and sample_size. It then wraps this data up by running it
-            through the method random.getsample and setting the result equal to the variable random_variables. The final step is to return this variable which
-            allows the method to fulfill the simple and repeatable task of getting a random sample
+            <h1 id="solid">What does solid stand for and where is each letter shown</h1>
+            <p class="lead">  SOLID is actually an acronym for the first five principles of object oriented design. These are the : S-ingle responsibility Principle, O-pen closed Principle, 
+            L-iskov Substitution Principle, I-nterface Segregation Principle, and the D-ependency Inversion Principle." 
 
 </p>
 
-   
-
-
-
-    
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h1 id="inheritence">How does the Calculator Program Demonstrate Inheritence</h1>
-            <p class="lead"> Inheritance is seen throughout the calculator program. Most notably, the <kbd>SampleMean</kbd> file shows this off the most.
-            The function sample_mean uses methods and variables like addition from the <kbd>Calculator.Addition</kbd> class and the <kbd>sample_size variable</kbd> from <kbd>Statistics.Getsample</kbd>. 
-
+            <h2>Single-responsibility Principle (SRP)</h2>
             
-           
-
-
+            <p class="lead">Single-responsibility Principle (SRP) states:
+            A class should have one and only one reason to change, meaning that a class should have only one job. We see this in simple methods such as addition only adding two variables 
+            and even complex methods such as sample_mean keeping scope in check and only returning the final division statement after all the other work is done so the method can be easily called upon. 
+ </p>
             
-            </p>
+            <h2>Open-closed Principle</h2>
             
-        </div>
-    </div>
-    
-     <div class="row">
-        <div class="col">
-            <h1 id="polymorphism">How Does the Calculator Program Demonstrate Polymorphism</h1>
-            <p class="lead"> Polymorphism is defined as a feature of a programming language that allows routines to use variables of different types at different times.
-            In layman's terms, basically it's the action of taking methods for classes you’re inheriting from and changing them to be used in different and often more specific ways.
-            The easiest to understand is how the “mean” method was changed through polymorphism to take the self and data variables and set them equal to self.result so
-            that the mean can be used by the rest of the program. This is seen below:
-            </p>
+            <p class="lead">The next principle, Open-closed Principle, entails that objects or entities should be open for extension but closed for modification. The Mean method shows up once again in this regard.
+            Throughout the program there’s not a single line of code CHANGING what the object created is and does, only the samplemean.py file EXTENDING what the object entails and adding on to its functions </p>
             
-             <code class="text-black">Statistics.py</code>
-        <code>
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
-
-from Statistics.Mean import mean
-
-class Statistics(Calculator):
-
-   def mean(self, data):
-
-
-       self.result = mean(data)
-
-
-       return self.result
-
-
-</pre></div>
-
-            <p class="lead">  For those looking for more examples, here is a code example displaying static polymorphism. The polymorphism happening here is the method brewCoffee
-            being changed through polymorphism to accept lists instead of individual objects. (code taken from stakify https://stackify.com/oop-concept-polymorphism/)</p>
+            <h2>Liskov Substitution Principle</h2>
             
-             <code class="text-black">brewCoffee</code>
-        <code>
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
-public class BasicCoffeeMachine {
-    // ...
-    public Coffee brewCoffee(CoffeeSelection selection) throws CoffeeException {
-        switch (selection) {
-        case FILTER_COFFEE:
-            return brewFilterCoffee();
-        default:
-            throw new CoffeeException(
-                "CoffeeSelection ["+selection+"] not supported!");
-        }   
-    }
-  
-    public List brewCoffee(CoffeeSelection selection, int number) throws CoffeeException {
-        List coffees = new ArrayList(number);
-        for (int i=0; i<number; i++) {
-            coffees.add(brewCoffee(selection));
-        }
-        return coffees;
-    }
-    // ...
-}
-
-
-
-</pre></div>
+            <p class="lead">After that the Liskov Substitution Principle states that every subclass or derived class should be substitutable for their base or parent class. The getsample method helps us understand this principle.
+            When called in the samplemean file, it takes the same variables as it originally did in the get sample file which are data and sample_size. This ensures that the method complies with the same rules of the return values 
+            of the superclass. Because of this this subclass can substitute for its superclass thus abiding by this principle. 
+ </p>
+            
+            <h2>Interface segregation principle</h2>
+            
+            <p class="lead">A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use. 
+            We can see this when a user wants to find the sample mean they don’t have to use the subtraction method as subtraction isn’t used normally in sample mean calculations
+            so variables and methods from a class about subtraction shouldn’t be needed either.  </p>
+            
+            <h2>Dependency inversion principle</h2>
+            
+            <p class="lead">Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
+            The <kbd>getSample</kbd> method is a shining example of this as it wraps information while not entangling higher and lower level modules in the wrong way. 
+ </p>
+            
             
 
-            
-        </div>
-    </div>
+     </div>
+</div>
+     
     
     
-     <div class="row">
-        <div class="col">
-            <h1 id="abstraction">How Does the Calculator Program Demonstrate Abstraction</h1>
-            <p class="lead"> Abstraction is one of the first things you would see in the calculator program. In the calculator class, 
-            there are functions named addition and subtraction that call their respective classes. However, all the user sees is that
-            the functions take their two variables (A and B), run them through the method, and return a new variable. The actual process
-            of adding or subtracting a variable isn’t seen here which is the core basis of abstraction.
-            
-          
-
-            
-            </p>
-            
-        </div>
-    </div>
     
     
     
