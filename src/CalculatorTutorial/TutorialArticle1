@@ -34,6 +34,16 @@
                         <li><a class="dropdown-item" href="/tools/vi/">Vi Editor</a></li>
                     </ul>
                 </li>
+                 <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculator Tutorial</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle1/">Pylint and Python</a></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle2/">AAA Testing</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle3/">All about OOPs</a></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle4/">SOLID Programming</a></li>
+                            </ul>
+                 </li>
             </ul>
         </div>
     </div>
