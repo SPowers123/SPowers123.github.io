@@ -87,8 +87,8 @@
     <div class="row">
         <div class="col">
             <h1 id="inheritence">How does the Calculator Program Demonstrate Inheritence</h1>
-            <p class="lead"> Inheritance is seen throughout the calculator program. Most notably, the SampleMean file shows this off the most.
-            The function sample_mean uses methods and variables like addition from the Calculator.Addition class and the sample_size variable from Statistics.Getsample. 
+            <p class="lead"> Inheritance is seen throughout the calculator program. Most notably, the <kbd>SampleMean</kbd> file shows this off the most.
+            The function sample_mean uses methods and variables like addition from the <kbd>Calculator.Addition</kbd> class and the <kbd>sample_size variable</kbd> from <kbd>Statistics.Getsample</kbd>. 
 
             
            
@@ -103,12 +103,64 @@
      <div class="row">
         <div class="col">
             <h1 id="polymorphism">How Does the Calculator Program Demonstrate Polymorphism</h1>
-            <p class="lead"> 
-            
-          
-
-            
+            <p class="lead"> Polymorphism is defined as a feature of a programming language that allows routines to use variables of different types at different times.
+            In layman's terms, basically it's the action of taking methods for classes you’re inheriting from and changing them to be used in different and often more specific ways.
+            The easiest to understand is how the “mean” method was changed through polymorphism to take the self and data variables and set them equal to self.result so
+            that the mean can be used by the rest of the program. This is seen below:
             </p>
+            
+             <code class="text-black">Statistics.py</code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+
+from Statistics.Mean import mean
+
+class Statistics(Calculator):
+
+   def mean(self, data):
+
+
+       self.result = mean(data)
+
+
+       return self.result
+
+
+</pre></div>
+
+            <p class="lead">  For those looking for more examples, here is a code example displaying static polymorphism. The polymorphism happening here is the method brewCoffee
+            being changed through polymorphism to accept lists instead of individual objects. (code taken from stakify https://stackify.com/oop-concept-polymorphism/)</p>
+            
+             <code class="text-black">brewCoffee</code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+public class BasicCoffeeMachine {
+    // ...
+    public Coffee brewCoffee(CoffeeSelection selection) throws CoffeeException {
+        switch (selection) {
+        case FILTER_COFFEE:
+            return brewFilterCoffee();
+        default:
+            throw new CoffeeException(
+                "CoffeeSelection ["+selection+"] not supported!");
+        }   
+    }
+  
+    public List brewCoffee(CoffeeSelection selection, int number) throws CoffeeException {
+        List coffees = new ArrayList(number);
+        for (int i=0; i<number; i++) {
+            coffees.add(brewCoffee(selection));
+        }
+        return coffees;
+    }
+    // ...
+}
+
+
+
+</pre></div>
+            
+
             
         </div>
     </div>
