@@ -69,9 +69,54 @@
         <div class="col">
             <h1 id="overview">Pylint and python tips and tricks</h1>
             <p class="lead">Linting is the process of running through your code in order to ensure it holds up to well agreed upon standards and can even extend to checking for areas of your program that can cause bugs.
-            In order to use Pylint you must go to the terminal and type “pylint filename.py” (replacing filename with your actual file).
-            When running a program like Pylint, there are five warning messages that can come back. 
+            In order to use Pylint you must go to the terminal and type.  
 </p>
+
+    <code class="text-black"></code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+pylint filename.py
+</pre></div>
+
+            <p class="lead">(make sure to replace the "filename" with your actual file's name).
+            When running a program like Pylint, there are five warning messages that can come back. </p>
+            
+            <ul>
+                <li>(C) convention, for programming standard violation </li>
+                <li>(R) refactor, for bad code smell</li>
+                <li>(W) warning, for python specific problems</li>
+                <li>(E) error, for much probably bugs in the code</li>
+                <li>(F) fatal, if an error occurred which prevented pylint from doing further processing.</li>
+            </ul>
+                
+                <p class="lead">The report file would have multiple messages preceded by one of the letters, followed by the line the linting program activated on, and a small message going into further detail.
+                I found this problem on my own project as I often forgot to write a small comment explaining the purpose of my code which led to a message that looked like this - <kbd>C:  1, 0: Missing module docstring (missing-docstring)</kbd>.
+                The final tip on using pylint is manipulating the options. The most important options are down below. </p>
+                
+                 <code class="text-black"></code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+ Master:
+  --generate-rcfile=<file>
+Commands:
+  --help-msg=<msg-id>
+Commands:
+  --help-msg=<msg-id>
+Message control:
+  --disable=<msg-ids>
+Reports:
+  --files-output=<y_or_n>
+  --reports=<y_or_n>
+  --output-format=<format>
+
+</pre></div>
+
+                <p class="lead">While all the commands have their uses, the most pertinent one is the message control section. 
+                Being able to disable messages that don’t pertain to what you want to look out for decreases clutter drastically. 
+                For example, if you don’t mind having deprecated functions you could use the <kbd>–disable=deprecated-module</kbd> function to 
+                strip messages to just things like invalid names and operator errors (like forgetting to put a space before an operator). </p>
+
+
             
         </div>
     </div>
