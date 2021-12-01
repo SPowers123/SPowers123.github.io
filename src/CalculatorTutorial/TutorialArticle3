@@ -60,35 +60,24 @@
     <div class="row">
         <div class="col-3 content-col rounded mt-2">
             <p class="lead">Content<br>
-                <a href="#overview">AAA Testing Overview</a><br>
-                <a href="#testingimportance">Why do AAA testing</a>
-                <a href="#extrernaluse">Using AAA testing externally</a>
+                <a href="#encapsulation">Where to Find Encapsulation</a><br>
+                <a href="#inheritence">Inheritence and Where to Find it in a Calculator</a>
+                <a href="#polymorphism"></a>
+                <a href="#abstraction">The Calculator Program and Abstraction</a>
             </p>   
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="overview">What is AAA testing and how is it done?</h1>
-            <p class="lead">  Triple A testing stands for Arrange, Act, and Assert.  The basis of this is to mirror the line of thinking to plan or prepare , enact that plan or action,
-            and then test to see if the plan worked well. Doing this in python covers a couple of steps. The first and most important thing is to create a whole separate file to test another file.
-            This file should then import both the unittest class and any methods from classes the test script should check over. For example, if you’re testing the statistics portion of a calculator
-            then you need to make a call to your class that covers random numbers and the method that creates said numbers. This would look like <kbd>from calcrandom.random import randint</kbd>. Once the file is ready,
-            the test class can be created. This class should input the unittest method TestCase. Now, you are ready to begin AAA testing. The first step is to “Arrange” and set up the variables/lists for the test.
-            In this case, a setup function called setUp that can set up a seed, create some random integers, and creates an instance of Statistics(). Then the ACT portion can happen. While using “result” is often required,
-            in this example using a class method that acts in the place of “result = self.statistics” like <kbd>self.assertIsInstance()</kbd> works too. Finally the Assert portion rounds out the test.
-            Using the assert tag should happen here in the case of assert result is none. However, a class method can help once again by using mean = self.statistics.mean(self.testData) and self.assertEqual(mean, 4.25) which all happen in its own function.
-            the code example of this would like like this in your ide:
+            <h1 id="encasulation">How does the calculator Display Encapsulation</h1>
+            <p class="lead">  Encapsulation is the simple act of wrapping code and data into a single unit. This can be displayed in the Getsample file.
+            In this file, there is a method called getSample that collects the variables data and sample_size. It then wraps this data up by running it
+            through the method random.getsample and setting the result equal to the variable random_variables. The final step is to return this variable which
+            allows the method to fulfill the simple and repeatable task of getting a random sample
 
 </p>
 
-   <code class="text-black">function examples</code>
-        <code>
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
-            mean = self.statistics.mean(self.testData)
-            self.assertEqual(mean, 4.25)
-            
-</pre></div>
-        </code>
+   
 
 
 
@@ -97,14 +86,12 @@
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="testingimportance">Why is AAA Testing Important?</h1>
-            <p class="lead"> 
+            <h1 id="inheritence">How does the Calculator Program Demonstrate Inheritence</h1>
+            <p class="lead"> Inheritance is seen throughout the calculator program. Most notably, the SampleMean file shows this off the most.
+            The function sample_mean uses methods and variables like addition from the Calculator.Addition class and the sample_size variable from Statistics.Getsample. 
+
             
-            So now that you know the process of AAA testing both generally and in the context of the calculator, why is it important? Well most acclipably is that it increases efficiency tenfold.
-            From the outset, creating tests first limits scope creep and keeps the process focused on the customers needs. This lets developers focus on the end goal without any tedious wavering
-            or last minute additions. On the maintenance side of things, efficiency is also increased. Having an automated and well implemented testing script allows for a program and team to scale
-            with little to no extra time added to quality assurance. As increasing the size of a program can add weeks to even months to manually test, it's quite beneficial to leave as little
-            as possible to human error and patience. The rapid response AAA testing enables also lets problems be addressed and fixed before the users even realize. 
+           
 
 
             
@@ -115,14 +102,27 @@
     
      <div class="row">
         <div class="col">
-            <h1 id="externaluse">How To Use External Data For Testing</h1>
+            <h1 id="polymorphism">How Does the Calculator Program Demonstrate Polymorphism</h1>
             <p class="lead"> 
             
-            There are a couple of ways to implement external data into a unit test. While these can be broadly applied, there are specific techniques that align with specific data types.
-            The general way to call external data to a test script is by using the line of code <kbd>THIS_DIR = os.path.dirname(os.path.abspath(__file__))</kbd> at the top of your testing script.
-            Then inside your test or test set up you can use the function <kbd>my_data_path = os.path.join(THIS_DIR, os.pardir, 'data_folder/data.csv')</kbd> or more directly
-            <kbd>my_data_path = os.path.join(THIS_DIR, 'testdata.csv')</kbd>. For those curious on how it would look in context of the calculator, the line of code would look like <kbd>self.csv_reader = CsvReader('Tests/Data/birthday.csv')</kbd>. 
+          
 
+            
+            </p>
+            
+        </div>
+    </div>
+    
+    
+     <div class="row">
+        <div class="col">
+            <h1 id="abstraction">How Does the Calculator Program Demonstrate Abstraction</h1>
+            <p class="lead"> Abstraction is one of the first things you would see in the calculator program. In the calculator class, 
+            there are functions named addition and subtraction that call their respective classes. However, all the user sees is that
+            the functions take their two variables (A and B), run them through the method, and return a new variable. The actual process
+            of adding or subtracting a variable isn’t seen here which is the core basis of abstraction.
+            
+          
 
             
             </p>
