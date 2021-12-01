@@ -60,27 +60,18 @@
     <div class="row">
         <div class="col-3 content-col rounded mt-2">
             <p class="lead">Content<br>
-                <a href="#overview">Overview</a><br>
-                <a href="#installation">Installation</a><br>
+                <a href="#overview">Pylint Tips and Tricks</a><br>
                 <a href="#glossary">Glossary</a>
             </p>   
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="content">Overview</h1>
-            <p class="lead">Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.</p>
-            
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h1 id="installation">Installation</h1>
-            <p class="lead"> While a full guide can be found here - <a href="url">https://docs.docker.com/desktop/windows/install/</a> , here's a couple of steps to intall it on your own.
-            <br> 1. The First step is to download Docker for your operating system of choice
-            <br> 2. Once thats done, Start up the app
-            <br> 3. Continue with the quick start guide 
-            <br> 4. Finally create an account and you're all good to go </p>
+            <h1 id="overview">Pylint and python tips and tricks</h1>
+            <p class="lead">Linting is the process of running through your code in order to ensure it holds up to well agreed upon standards and can even extend to checking for areas of your program that can cause bugs.
+            In order to use Pylint you must go to the terminal and type “pylint filename.py” (replacing filename with your actual file).
+            When running a program like Pylint, there are five warning messages that can come back. 
+</p>
             
         </div>
     </div>
