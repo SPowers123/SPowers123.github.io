@@ -62,7 +62,7 @@
             <p class="lead">Content<br>
                 <a href="#overview">Overview</a><br>
                 <a href="#installation">Installation</a><br>
-                <a href="#commands">Commands</a>
+                <a href="#glossary">Glossary</a>
             </p>   
         </div>
     </div>
@@ -86,16 +86,25 @@
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="commands">Commands</h1>
+            <h1 id="glossary">Glossary</h1>
             <p class="lead"> docker stop CONTAINERNAME = stops the webserver
-                             <br> docker rm CONTAINERNAME = removes the container
-                             <br> docker prune = releases the resources that were used for container groups (solves the issue with reaching the quota of container groups)
-                             <br> docker build -t CONTAINER-NAME . = creates a container with the name CONTAINER-NAME
-                             <br> docker run -dp x:x CONTAINER-NAME = runs the container name CONTAINER-NAME on the port x (ie 80:80 runs on port 80)
-                             <br> docker ps = displays information about the containers running such as their ID
-                             <br> docker push docker/CONTAINER-NAME = pushes the container with the tag CONTAINER-NAME to your docker repository
-                             <br> docker login -u YOUR-USER-NAME = logs in to the docke account that you put in “YOUR-USER-NAME”
-                             <br> docker tag CONTAINER-NAME YOUR-USER-NAME/CONTAINER-NAME = gives your container the tag CONTAINER-NAME so that it can be seen and called. </p>
+                             <br> Factory - an object for creating other objects
+                             <br> Instantiation - the creation of an object of a specific class 
+                             <br> Object - A variable, data structure, function, or a method that can be referenced by an identifier 
+                             <br> Class - an extensible program-code-template for creating objects, providing initial values for state and implementations of behavior (member functions or methods)
+                             <br> Namespace - A declarative region that provides a scope to the identifiers. 
+                             <br> constructor - A special type of class used to create an object
+                             <br> Fixture - a set of pre-conditions needed to write a test
+                             <br> type hint - gives you the ability to define the type of values that can be passed for each argument of a function or method
+                             <br> type cast - A way of changing an object from one data type to another
+                             <br> unit test - The way of ensuring a smallest piece of code that can be logically isolated works correctly 
+                             <br> Static - A member of a class that isn’t associated with an instance of a class. Allows the member to be  accessed without instantiation
+                             <br> class method - Methods that are called in a class rather than an instance 
+                             <br> facade - an object that serves as a front-facing interface masking more complex underlying or structural code
+                             <br> design patterns used  - general repeatable solution to a commonly occurring problem in software design, specifically both factories and facades were used in this project
+                             <br> method  - A set of instructions that can be called upon to fulfill a designated command (ie getName or setName)
+                             <br> Property - fields of objects/classes that can have dedicated getter/setter routines.
+                             </p>
             
         </div>
     </div>
