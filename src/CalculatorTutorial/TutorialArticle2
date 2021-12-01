@@ -72,13 +72,23 @@
             <p class="lead">  Triple A testing stands for Arrange, Act, and Assert.  The basis of this is to mirror the line of thinking to plan or prepare , enact that plan or action,
             and then test to see if the plan worked well. Doing this in python covers a couple of steps. The first and most important thing is to create a whole separate file to test another file.
             This file should then import both the unittest class and any methods from classes the test script should check over. For example, if you’re testing the statistics portion of a calculator
-            then you need to make a call to your class that covers random numbers and the method that creates said numbers. This would look like “from calcrandom.random import randint”. Once the file is ready,
+            then you need to make a call to your class that covers random numbers and the method that creates said numbers. This would look like <kbd>from calcrandom.random import randint</kbd>. Once the file is ready,
             the test class can be created. This class should input the unittest method TestCase. Now, you are ready to begin AAA testing. The first step is to “Arrange” and set up the variables/lists for the test.
             In this case, a setup function called setUp that can set up a seed, create some random integers, and creates an instance of Statistics(). Then the ACT portion can happen. While using “result” is often required,
-            in this example using a class method that acts in the place of “result = self.statistics” like self.assertIsInstance() works too. Finally the Assert portion rounds out the test.
-            Using the assert tag should happen here in the case of assert result is none. However, a class method can help once again by using mean = self.statistics.mean(self.testData) and self.assertEqual(mean, 4.25) which all happen in its own function. 
+            in this example using a class method that acts in the place of “result = self.statistics” like <kbd>self.assertIsInstance()</kbd> works too. Finally the Assert portion rounds out the test.
+            Using the assert tag should happen here in the case of assert result is none. However, a class method can help once again by using mean = self.statistics.mean(self.testData) and self.assertEqual(mean, 4.25) which all happen in its own function.
+            the code example of this would like like this in your ide:
 
 </p>
+
+   <code class="text-black">function examples</code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+            mean = self.statistics.mean(self.testData)
+            self.assertEqual(mean, 4.25)
+            
+</pre></div>
+        </code>
 
 
 
@@ -109,9 +119,9 @@
             <p class="lead"> 
             
             There are a couple of ways to implement external data into a unit test. While these can be broadly applied, there are specific techniques that align with specific data types.
-            The general way to call external data to a test script is by using the line of code THIS_DIR = os.path.dirname(os.path.abspath(__file__)) at the top of your testing script.
-            Then inside your test or test set up you can use the function “my_data_path = os.path.join(THIS_DIR, os.pardir, 'data_folder/data.csv')” or more directly
-            my_data_path = os.path.join(THIS_DIR, 'testdata.csv'). For those curious on how it would look in context of the calculator, the line of code would look like “ self.csv_reader = CsvReader('Tests/Data/birthday.csv')”. 
+            The general way to call external data to a test script is by using the line of code <kbd>THIS_DIR = os.path.dirname(os.path.abspath(__file__))</kbd> at the top of your testing script.
+            Then inside your test or test set up you can use the function <kbd>my_data_path = os.path.join(THIS_DIR, os.pardir, 'data_folder/data.csv')</kbd> or more directly
+            <kbd>my_data_path = os.path.join(THIS_DIR, 'testdata.csv')</kbd>. For those curious on how it would look in context of the calculator, the line of code would look like <kbd>self.csv_reader = CsvReader('Tests/Data/birthday.csv')</kbd>. 
 
 
             
