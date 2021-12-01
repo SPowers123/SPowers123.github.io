@@ -60,90 +60,68 @@
     <div class="row">
         <div class="col-3 content-col rounded mt-2">
             <p class="lead">Content<br>
-                <a href="#overview">Pylint Tips and Tricks</a><br>
-                <a href="#glossary">Glossary</a>
+                <a href="#overview">AAA Testing Overview</a><br>
+                <a href="#testingimportance">Why do AAA testing</a>
+                <a href="#extrernaluse">Using AAA testing externally</a>
             </p>   
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="overview">Pylint and python tips and tricks</h1>
-            <p class="lead">Linting is the process of running through your code in order to ensure it holds up to well agreed upon standards and can even extend to checking for areas of your program that can cause bugs.
-            In order to use Pylint you must go to the terminal and type.  
+            <h1 id="overview">What is AAA testing and how is it done?</h1>
+            <p class="lead">  Triple A testing stands for Arrange, Act, and Assert.  The basis of this is to mirror the line of thinking to plan or prepare , enact that plan or action,
+            and then test to see if the plan worked well. Doing this in python covers a couple of steps. The first and most important thing is to create a whole separate file to test another file.
+            This file should then import both the unittest class and any methods from classes the test script should check over. For example, if you’re testing the statistics portion of a calculator
+            then you need to make a call to your class that covers random numbers and the method that creates said numbers. This would look like “from calcrandom.random import randint”. Once the file is ready,
+            the test class can be created. This class should input the unittest method TestCase. Now, you are ready to begin AAA testing. The first step is to “Arrange” and set up the variables/lists for the test.
+            In this case, a setup function called setUp that can set up a seed, create some random integers, and creates an instance of Statistics(). Then the ACT portion can happen. While using “result” is often required,
+            in this example using a class method that acts in the place of “result = self.statistics” like self.assertIsInstance() works too. Finally the Assert portion rounds out the test.
+            Using the assert tag should happen here in the case of assert result is none. However, a class method can help once again by using mean = self.statistics.mean(self.testData) and self.assertEqual(mean, 4.25) which all happen in its own function. 
+
 </p>
 
-    <code class="text-black"></code>
-        <code>
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
-pylint filename.py
-</pre></div>
-
-            <p class="lead">(make sure to replace the "filename" with your actual file's name).
-            When running a program like Pylint, there are five warning messages that can come back. </p>
-            
-            <ul>
-                <li>(C) convention, for programming standard violation </li>
-                <li>(R) refactor, for bad code smell</li>
-                <li>(W) warning, for python specific problems</li>
-                <li>(E) error, for much probably bugs in the code</li>
-                <li>(F) fatal, if an error occurred which prevented pylint from doing further processing.</li>
-            </ul>
-                
-                <p class="lead">The report file would have multiple messages preceded by one of the letters, followed by the line the linting program activated on, and a small message going into further detail.
-                I found this problem on my own project as I often forgot to write a small comment explaining the purpose of my code which led to a message that looked like this - <kbd>C:  1, 0: Missing module docstring (missing-docstring)</kbd>.
-                The final tip on using pylint is manipulating the options. The most important options are down below. </p>
-                
-                 <code class="text-black"></code>
-        <code>
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
- Master:
-  --generate-rcfile=<file>
-Commands:
-  --help-msg=<msg-id>
-Commands:
-  --help-msg=<msg-id>
-Message control:
-  --disable=<msg-ids>
-Reports:
-  --files-output=<y_or_n>
-  --reports=<y_or_n>
-  --output-format=<format>
-
-</pre></div>
-
-                <p class="lead">While all the commands have their uses, the most pertinent one is the message control section. 
-                Being able to disable messages that don’t pertain to what you want to look out for decreases clutter drastically. 
-                For example, if you don’t mind having deprecated functions you could use the <kbd>–disable=deprecated-module</kbd> function to 
-                strip messages to just things like invalid names and operator errors (like forgetting to put a space before an operator). </p>
 
 
-            
+    
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h1 id="glossary">Glossary</h1>
-            <p class="lead"> docker stop CONTAINERNAME = stops the webserver
-                             <br> Factory - an object for creating other objects
-                             <br> Instantiation - the creation of an object of a specific class 
-                             <br> Object - A variable, data structure, function, or a method that can be referenced by an identifier 
-                             <br> Class - an extensible program-code-template for creating objects, providing initial values for state and implementations of behavior (member functions or methods)
-                             <br> Namespace - A declarative region that provides a scope to the identifiers. 
-                             <br> constructor - A special type of class used to create an object
-                             <br> Fixture - a set of pre-conditions needed to write a test
-                             <br> type hint - gives you the ability to define the type of values that can be passed for each argument of a function or method
-                             <br> type cast - A way of changing an object from one data type to another
-                             <br> unit test - The way of ensuring a smallest piece of code that can be logically isolated works correctly 
-                             <br> Static - A member of a class that isn’t associated with an instance of a class. Allows the member to be  accessed without instantiation
-                             <br> class method - Methods that are called in a class rather than an instance 
-                             <br> facade - an object that serves as a front-facing interface masking more complex underlying or structural code
-                             <br> design patterns used  - general repeatable solution to a commonly occurring problem in software design, specifically both factories and facades were used in this project
-                             <br> method  - A set of instructions that can be called upon to fulfill a designated command (ie getName or setName)
-                             <br> Property - fields of objects/classes that can have dedicated getter/setter routines.
-                             </p>
+            <h1 id="testingimportance">Why is AAA Testing Important?</h1>
+            <p class="lead"> 
+            
+            So now that you know the process of AAA testing both generally and in the context of the calculator, why is it important? Well most acclipably is that it increases efficiency tenfold.
+            From the outset, creating tests first limits scope creep and keeps the process focused on the customers needs. This lets developers focus on the end goal without any tedious wavering
+            or last minute additions. On the maintenance side of things, efficiency is also increased. Having an automated and well implemented testing script allows for a program and team to scale
+            with little to no extra time added to quality assurance. As increasing the size of a program can add weeks to even months to manually test, it's quite beneficial to leave as little
+            as possible to human error and patience. The rapid response AAA testing enables also lets problems be addressed and fixed before the users even realize. 
+
+
+            
+            </p>
             
         </div>
     </div>
+    
+     <div class="row">
+        <div class="col">
+            <h1 id="externaluse">How To Use External Data For Testing</h1>
+            <p class="lead"> 
+            
+            There are a couple of ways to implement external data into a unit test. While these can be broadly applied, there are specific techniques that align with specific data types.
+            The general way to call external data to a test script is by using the line of code THIS_DIR = os.path.dirname(os.path.abspath(__file__)) at the top of your testing script.
+            Then inside your test or test set up you can use the function “my_data_path = os.path.join(THIS_DIR, os.pardir, 'data_folder/data.csv')” or more directly
+            my_data_path = os.path.join(THIS_DIR, 'testdata.csv'). For those curious on how it would look in context of the calculator, the line of code would look like “ self.csv_reader = CsvReader('Tests/Data/birthday.csv')”. 
+
+
+            
+            </p>
+            
+        </div>
+    </div>
+    
+    
+    
 </div>
 
 <!-- Bootstrap core JS-->
