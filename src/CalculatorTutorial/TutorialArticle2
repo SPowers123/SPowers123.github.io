@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Azuretorial - Docker</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <style>
+        .content-col{
+            border: 1px solid #212529;
+        }
+    </style>
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Azuretorial</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tutorial/">Tutorial</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/tools/git/">Git</a></li>
+                        <li><a class="dropdown-item" href="/tools/docker/">Docker</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/tools/linux/">Linux Commands</a></li>
+                        <li><a class="dropdown-item" href="/tools/vi/">Vi Editor</a></li>
+                    </ul>
+                </li>
+                 <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculator Tutorial</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle1/">Pylint and Python</a></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle2/">AAA Testing</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle3/">All about OOPs</a></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle4/">SOLID Programming</a></li>
+                            </ul>
+                 </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page content-->
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col">
+            <div class="mt-5">
+                <h1>Tools: Docker</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 content-col rounded mt-2">
+            <p class="lead">Content<br>
+                <a href="#overview">Pylint Tips and Tricks</a><br>
+                <a href="#glossary">Glossary</a>
+            </p>   
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 id="overview">Pylint and python tips and tricks</h1>
+            <p class="lead">Linting is the process of running through your code in order to ensure it holds up to well agreed upon standards and can even extend to checking for areas of your program that can cause bugs.
+            In order to use Pylint you must go to the terminal and type.  
+</p>
 
+    <code class="text-black"></code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+pylint filename.py
+</pre></div>
+
+            <p class="lead">(make sure to replace the "filename" with your actual file's name).
+            When running a program like Pylint, there are five warning messages that can come back. </p>
+            
+            <ul>
+                <li>(C) convention, for programming standard violation </li>
+                <li>(R) refactor, for bad code smell</li>
+                <li>(W) warning, for python specific problems</li>
+                <li>(E) error, for much probably bugs in the code</li>
+                <li>(F) fatal, if an error occurred which prevented pylint from doing further processing.</li>
+            </ul>
+                
+                <p class="lead">The report file would have multiple messages preceded by one of the letters, followed by the line the linting program activated on, and a small message going into further detail.
+                I found this problem on my own project as I often forgot to write a small comment explaining the purpose of my code which led to a message that looked like this - <kbd>C:  1, 0: Missing module docstring (missing-docstring)</kbd>.
+                The final tip on using pylint is manipulating the options. The most important options are down below. </p>
+                
+                 <code class="text-black"></code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+ Master:
+  --generate-rcfile=<file>
+Commands:
+  --help-msg=<msg-id>
+Commands:
+  --help-msg=<msg-id>
+Message control:
+  --disable=<msg-ids>
+Reports:
+  --files-output=<y_or_n>
+  --reports=<y_or_n>
+  --output-format=<format>
+
+</pre></div>
+
+                <p class="lead">While all the commands have their uses, the most pertinent one is the message control section. 
+                Being able to disable messages that don’t pertain to what you want to look out for decreases clutter drastically. 
+                For example, if you don’t mind having deprecated functions you could use the <kbd>–disable=deprecated-module</kbd> function to 
+                strip messages to just things like invalid names and operator errors (like forgetting to put a space before an operator). </p>
+
+
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 id="glossary">Glossary</h1>
+            <p class="lead"> docker stop CONTAINERNAME = stops the webserver
+                             <br> Factory - an object for creating other objects
+                             <br> Instantiation - the creation of an object of a specific class 
+                             <br> Object - A variable, data structure, function, or a method that can be referenced by an identifier 
+                             <br> Class - an extensible program-code-template for creating objects, providing initial values for state and implementations of behavior (member functions or methods)
+                             <br> Namespace - A declarative region that provides a scope to the identifiers. 
+                             <br> constructor - A special type of class used to create an object
+                             <br> Fixture - a set of pre-conditions needed to write a test
+                             <br> type hint - gives you the ability to define the type of values that can be passed for each argument of a function or method
+                             <br> type cast - A way of changing an object from one data type to another
+                             <br> unit test - The way of ensuring a smallest piece of code that can be logically isolated works correctly 
+                             <br> Static - A member of a class that isn’t associated with an instance of a class. Allows the member to be  accessed without instantiation
+                             <br> class method - Methods that are called in a class rather than an instance 
+                             <br> facade - an object that serves as a front-facing interface masking more complex underlying or structural code
+                             <br> design patterns used  - general repeatable solution to a commonly occurring problem in software design, specifically both factories and facades were used in this project
+                             <br> method  - A set of instructions that can be called upon to fulfill a designated command (ie getName or setName)
+                             <br> Property - fields of objects/classes that can have dedicated getter/setter routines.
+                             </p>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
+</body>
+</html>
