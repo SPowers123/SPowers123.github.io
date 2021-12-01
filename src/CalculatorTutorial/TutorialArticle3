@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Azuretorial - Docker</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <style>
+        .content-col{
+            border: 1px solid #212529;
+        }
+    </style>
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Azuretorial</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tutorial/">Tutorial</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/tools/git/">Git</a></li>
+                        <li><a class="dropdown-item" href="/tools/docker/">Docker</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/tools/linux/">Linux Commands</a></li>
+                        <li><a class="dropdown-item" href="/tools/vi/">Vi Editor</a></li>
+                    </ul>
+                </li>
+                 <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculator Tutorial</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle1/">Pylint and Python</a></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle2/">AAA Testing</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle3/">All about OOPs</a></li>
+                                <li><a class="dropdown-item" href="/CalculatorTutorial/TutorialArticle4/">SOLID Programming</a></li>
+                            </ul>
+                 </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page content-->
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col">
+            <div class="mt-5">
+                <h1>Tools: Docker</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 content-col rounded mt-2">
+            <p class="lead">Content<br>
+                <a href="#overview">AAA Testing Overview</a><br>
+                <a href="#testingimportance">Why do AAA testing</a>
+                <a href="#extrernaluse">Using AAA testing externally</a>
+            </p>   
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 id="overview">What is AAA testing and how is it done?</h1>
+            <p class="lead">  Triple A testing stands for Arrange, Act, and Assert.  The basis of this is to mirror the line of thinking to plan or prepare , enact that plan or action,
+            and then test to see if the plan worked well. Doing this in python covers a couple of steps. The first and most important thing is to create a whole separate file to test another file.
+            This file should then import both the unittest class and any methods from classes the test script should check over. For example, if you’re testing the statistics portion of a calculator
+            then you need to make a call to your class that covers random numbers and the method that creates said numbers. This would look like <kbd>from calcrandom.random import randint</kbd>. Once the file is ready,
+            the test class can be created. This class should input the unittest method TestCase. Now, you are ready to begin AAA testing. The first step is to “Arrange” and set up the variables/lists for the test.
+            In this case, a setup function called setUp that can set up a seed, create some random integers, and creates an instance of Statistics(). Then the ACT portion can happen. While using “result” is often required,
+            in this example using a class method that acts in the place of “result = self.statistics” like <kbd>self.assertIsInstance()</kbd> works too. Finally the Assert portion rounds out the test.
+            Using the assert tag should happen here in the case of assert result is none. However, a class method can help once again by using mean = self.statistics.mean(self.testData) and self.assertEqual(mean, 4.25) which all happen in its own function.
+            the code example of this would like like this in your ide:
 
+</p>
+
+   <code class="text-black">function examples</code>
+        <code>
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">version: <span style="background-color: #fff0f0">&quot;3.2&quot;</span>
+            mean = self.statistics.mean(self.testData)
+            self.assertEqual(mean, 4.25)
+            
+</pre></div>
+        </code>
+
+
+
+    
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 id="testingimportance">Why is AAA Testing Important?</h1>
+            <p class="lead"> 
+            
+            So now that you know the process of AAA testing both generally and in the context of the calculator, why is it important? Well most acclipably is that it increases efficiency tenfold.
+            From the outset, creating tests first limits scope creep and keeps the process focused on the customers needs. This lets developers focus on the end goal without any tedious wavering
+            or last minute additions. On the maintenance side of things, efficiency is also increased. Having an automated and well implemented testing script allows for a program and team to scale
+            with little to no extra time added to quality assurance. As increasing the size of a program can add weeks to even months to manually test, it's quite beneficial to leave as little
+            as possible to human error and patience. The rapid response AAA testing enables also lets problems be addressed and fixed before the users even realize. 
+
+
+            
+            </p>
+            
+        </div>
+    </div>
+    
+     <div class="row">
+        <div class="col">
+            <h1 id="externaluse">How To Use External Data For Testing</h1>
+            <p class="lead"> 
+            
+            There are a couple of ways to implement external data into a unit test. While these can be broadly applied, there are specific techniques that align with specific data types.
+            The general way to call external data to a test script is by using the line of code <kbd>THIS_DIR = os.path.dirname(os.path.abspath(__file__))</kbd> at the top of your testing script.
+            Then inside your test or test set up you can use the function <kbd>my_data_path = os.path.join(THIS_DIR, os.pardir, 'data_folder/data.csv')</kbd> or more directly
+            <kbd>my_data_path = os.path.join(THIS_DIR, 'testdata.csv')</kbd>. For those curious on how it would look in context of the calculator, the line of code would look like <kbd>self.csv_reader = CsvReader('Tests/Data/birthday.csv')</kbd>. 
+
+
+            
+            </p>
+            
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
+</body>
+</html>
